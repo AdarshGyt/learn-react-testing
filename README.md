@@ -21,3 +21,15 @@
     2. Integration test (b/w components)
     3. functional tests (behaviour test)
     4. Acceptence or E2E test (selenium, Cypress)
+
+
+-simple app
+    - test interactivity using fireEvent
+    - jest-dom assertions
+        - toBeEnabled()
+        - toBeDisabled()
+        - toBeChecked()
+    - getByRole option {name: }
+    - jest describe to group tests
+    - unit testing functions
+    
