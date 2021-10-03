@@ -21,5 +21,10 @@ test('button turns blue when clicked', () => {
   fireEvent.click(colorButton)
   expect(colorButton).toHaveStyle({backgroundColor:'blue'})
   expect(colorButton.textContent).toBe('change to red')
-
 });
+
+test('checkbox initially unchecked', ()=>{
+  render(<App />)
+  const checkbox = screen.getByRole('checkbox', {checked:false})
+  expect(checkbox).toBeChecked('false')
+})
