@@ -47,3 +47,16 @@ test('checkbox disable button on first click and diable on second click', ()=>{
   fireEvent.click(checkbox)
   expect(button).toBeEnabled()
 })
+
+
+
+test('first flow with button red', ()=>{
+  render(<App />)
+  const button = screen.getByRole('button')
+  const checkbox = screen.getByRole('checkbox')
+
+  fireEvent.click(checkbox)
+  expect(button).toHaveStyle({backgroundColor:'gray'})
+
+
+})
