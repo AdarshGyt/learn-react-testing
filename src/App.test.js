@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
+import { replaceCamelWithSpaces } from './App'
 
 //test('renders learn react link', () => {
   // render(<App />); //helps rendering component into VDOM
@@ -76,4 +77,19 @@ test('second flow with button blue initially', ()=>{
   fireEvent.click(checkbox)
   expect(button).toHaveStyle({backgroundColor:'blue'})
 
+})
+
+//combines tests
+describe('spaces before camel case letters', ()=>{
+  test('Words for no inner capital letters', ()=>{
+    expect(replaceCamelWithSpaces('Red')).toBe('Red')
+  })
+
+  test('Words for one inner capital letter', ()=>{
+    expect(replaceCamelWithSpaces('MidnightBlue')).toBe('Midnight Blue')
+  })
+
+  test('Words for mutiple inner capital letters', ()=>{
+    expect(replaceCamelWithSpaces('MediumVioletRed')).toBe('Medium Violet Red')
+  })
 })
