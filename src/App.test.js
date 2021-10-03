@@ -52,11 +52,28 @@ test('checkbox disable button on first click and diable on second click', ()=>{
 
 test('first flow with button red', ()=>{
   render(<App />)
-  const button = screen.getByRole('button')
+  const button = screen.getByRole('button', {name:'change to blue'})
   const checkbox = screen.getByRole('checkbox')
 
   fireEvent.click(checkbox)
   expect(button).toHaveStyle({backgroundColor:'gray'})
 
+  fireEvent.click(checkbox)
+  expect(button).toHaveStyle({backgroundColor:'red'})
+
+})
+
+test('second flow with button blue initially', ()=>{
+  render(<App />)
+  const button = screen.getByRole('button', {name:'change to blue'})
+  const checkbox = screen.getByRole('checkbox')
+
+  fireEvent.click(button)
+
+  fireEvent.click(checkbox)
+  expect(button).toHaveStyle({backgroundColor:'gray'})
+
+  fireEvent.click(checkbox)
+  expect(button).toHaveStyle({backgroundColor:'blue'})
 
 })
