@@ -27,7 +27,7 @@ test('button turns blue when clicked', () => {
 test('initial conditions', ()=>{
   render(<App />)
   const button = screen.getByRole('button', {name:'change to blue'})
-  const checkbox = screen.getByRole('checkbox')
+  const checkbox = screen.getByRole('checkbox', {name:'Disable button'})
   
   expect(button).toBeEnabled()
   expect(checkbox).not.toBeChecked()
